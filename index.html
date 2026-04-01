@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MMMMMMMMASLO — Крафтове фермерське масло</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--n1:#F7F3EE;--n2:#EDE5DA;--n3:#DDD2C4;--n4:#C9BAA7;--n5:#B5A38E;--n6:#9E8C76;--n7:#877560;--n8:#6B5B4A;--n9:#504336;--n10:#3A3028;--n11:#2A231D;--n12:#1C1814;--acc:#C4A87A;--acc-l:#DCCAA6}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,Helvetica,Arial,sans-serif;color:var(--n12);background:var(--n1);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.label{font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--n6);margin-bottom:18px}
+.label-l{color:var(--n5)}.label-g{color:var(--acc-l)}
+h2.st{font-family:'DM Sans',sans-serif;font-size:clamp(36px,5vw,68px);font-weight:800;line-height:1.06;letter-spacing:-2px}
+h2.st .m{color:var(--n5)}h2.st .a{color:var(--acc)}
+
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between;background:transparent;transition:all .5s}
+nav.sc{background:rgba(28,24,20,.9);backdrop-filter:blur(30px) saturate(1.6);-webkit-backdrop-filter:blur(30px) saturate(1.6);border-bottom:1px solid rgba(255,255,255,.05)}
+.nl{font-weight:700;font-size:14px;letter-spacing:2.5px;color:var(--n1);text-decoration:none;transition:color .4s}
+nav.sc .nl{color:var(--n4)}
+.nk{display:flex;gap:28px;list-style:none;align-items:center}
+.nk a{font-size:12px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:color .3s}.nk a:hover{color:#fff}
+nav.sc .nk a{color:var(--n6)}nav.sc .nk a:hover{color:var(--n2)}
+.nc{padding:8px 22px!important;background:var(--n1)!important;color:var(--n12)!important;border-radius:980px;font-weight:600!important;font-size:11px!important;transition:all .3s!important}.nc:hover{opacity:.9;transform:scale(1.03)}
+
+.hero{position:relative;height:100vh;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.hero-bg{position:absolute;inset:0}.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,24,20,.5) 0%,rgba(28,24,20,.12) 20%,transparent 35%,transparent 60%,rgba(28,24,20,.12) 78%,rgba(28,24,20,.6) 100%)}
+.ht{position:relative;z-index:2;text-align:center;padding:96px 24px 0}
+.ho{font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px;animation:fu .8s ease .1s both}
+.hero h1{font-family:'DM Sans',sans-serif;font-size:clamp(44px,6.5vw,88px);font-weight:800;color:#fff;line-height:.94;letter-spacing:-3px;animation:fu .8s ease .25s both}
+.hero h1 .a{color:var(--acc-l)}
+.hb{position:relative;z-index:2;text-align:center;padding:0 24px 48px;display:flex;flex-direction:column;align-items:center}
+.hs{font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,.65);max-width:440px;line-height:1.6;animation:fu .8s ease .45s both}
+.hbtn{display:flex;gap:12px;margin-top:24px;animation:fu .8s ease .6s both}
+.bw{padding:14px 36px;background:var(--n1);color:var(--n12);border:none;border-radius:980px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .3s}.bw:hover{transform:scale(1.04);box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.bg{padding:14px 36px;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);color:#fff;border:1.5px solid rgba(255,255,255,.18);border-radius:980px;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .3s}.bg:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3)}
+.bd{padding:14px 36px;background:var(--n12);color:var(--n1);border:none;border-radius:980px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .3s}.bd:hover{transform:scale(1.04);box-shadow:0 8px 30px rgba(28,24,20,.2)}
+.bo{padding:14px 36px;background:transparent;color:var(--n9);border:1.5px solid var(--n4);border-radius:980px;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .3s}.bo:hover{border-color:var(--n8);color:var(--n12)}
+
+.hl{padding:80px 0;background:var(--n12);overflow:hidden}
+.hl-t{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;padding:0 24px;max-width:1300px;margin:0 auto}@media(max-width:1024px){.hl-t{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:none}.hl-t::-webkit-scrollbar{display:none}}
+.hl-c{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:3/4}
+@media(max-width:1024px){.hl-c{flex:0 0 280px;scroll-snap-align:start}}
+.hl-c img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.19,1,.22,1)}.hl-c:hover img{transform:scale(1.04)}
+.hl-c::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(28,24,20,.85) 100%)}
+.hl-ct{position:absolute;bottom:0;left:0;right:0;padding:24px;z-index:2}
+.hl-ct h4{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-bottom:4px}
+.hl-ct p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.5}
+
+.des{padding:120px 24px 0;background:var(--n1);text-align:center;overflow:hidden}
+.des-h{max-width:1100px;margin:48px auto 0}.des-h img{width:100%;height:auto;border-radius:20px}
+.des-i{max-width:680px;margin:48px auto}
+
+.pg-s{padding:80px 24px 120px;background:var(--n1)}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1060px;margin:48px auto 0}
+.pc{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:4/5;cursor:pointer;transition:transform .5s cubic-bezier(.19,1,.22,1);background:var(--n2)}.pc:hover{transform:scale(1.015)}.pc:hover .pi img{transform:scale(1.06)}
+.pi{position:absolute;inset:0;overflow:hidden}.pi img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.19,1,.22,1)}
+.po{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(28,24,20,.4) 60%,rgba(28,24,20,.9) 100%)}
+.pf{position:absolute;bottom:0;left:0;right:0;padding:28px;z-index:2}
+.pt{display:inline-block;padding:4px 12px;border:1px solid rgba(255,255,255,.15);border-radius:980px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px;backdrop-filter:blur(4px);background:rgba(255,255,255,.06)}
+.pn{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;color:#fff;letter-spacing:-.4px;margin-bottom:4px}
+.pdsc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.5}
+
+.tex{padding:0;background:var(--n12)}.tex-w{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+.tex-i{overflow:hidden}.tex-i img{width:100%;height:100%;object-fit:cover}
+.tex-c{display:flex;flex-direction:column;justify-content:center;padding:80px 64px}
+
+.uc{padding:120px 24px;background:var(--n1)}.uc-h{text-align:center;margin-bottom:64px}
+.ug{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:1100px;margin:0 auto}
+.ucc{position:relative;border-radius:20px;overflow:hidden;min-height:400px;cursor:pointer;transition:transform .5s cubic-bezier(.19,1,.22,1)}.ucc:hover{transform:scale(1.01)}.ucc:hover img{transform:scale(1.04)}
+.ucc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.19,1,.22,1)}
+.ucc::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(28,24,20,.8) 100%)}
+.uct{position:absolute;bottom:0;left:0;right:0;padding:32px;z-index:2}
+.uct h3{font-family:'DM Sans',sans-serif;font-size:24px;font-weight:700;color:#fff;letter-spacing:-.5px;margin-bottom:6px}
+.uct p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.5;max-width:360px}
+
+.lb{position:relative;min-height:70vh;display:flex;align-items:flex-end;overflow:hidden}
+.lb>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,24,20,.05) 0%,transparent 30%,rgba(28,24,20,.4) 70%,rgba(28,24,20,.85) 100%)}
+.lb-t{position:relative;z-index:2;padding:0 64px 64px;max-width:600px}
+
+.qu{padding:120px 24px;background:var(--n12)}.qu-h{text-align:center;margin-bottom:64px}
+.qn{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:960px;margin:0 auto 64px;text-align:center}
+.qnv{font-family:'DM Sans',sans-serif;font-size:clamp(44px,5vw,64px);font-weight:800;color:var(--acc);letter-spacing:-2px;line-height:1}
+.qnl{font-size:13px;color:var(--n6);margin-top:8px;line-height:1.4}
+.qg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto}
+.qc{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:4/3}
+.qc img{width:100%;height:100%;object-fit:cover}.qc::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(28,24,20,.85) 100%)}
+.qc-t{position:absolute;bottom:0;left:0;right:0;padding:24px;z-index:2}
+.qc-t h4{font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:4px}
+.qc-t p{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.5}
+
+.ing{padding:120px 24px;background:var(--n2)}.ing-h{text-align:center;margin-bottom:64px}
+.ig{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;max-width:1100px;margin:0 auto}
+.ic{text-align:center;transition:transform .4s;cursor:pointer}.ic:hover{transform:translateY(-6px)}
+.ic img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:20px;margin-bottom:14px}
+.ic h4{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:var(--n11);letter-spacing:-.2px}.ic p{font-size:12px;color:var(--n6);margin-top:4px}
+
+.mm{padding:0;background:var(--n1)}
+.mm-h{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.mm-h>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.mm-h::after{content:'';position:absolute;inset:0;background:rgba(28,24,20,.45)}
+.mm-ht{position:relative;z-index:2;text-align:center}
+.mm-ht h2{font-family:'DM Sans',sans-serif;font-size:clamp(64px,12vw,160px);font-weight:900;color:#fff;letter-spacing:-4px;line-height:.85;text-shadow:0 4px 40px rgba(0,0,0,.2)}
+.mm-ht p{font-size:clamp(16px,1.8vw,22px);color:rgba(255,255,255,.7);margin-top:20px;max-width:480px;margin-left:auto;margin-right:auto}
+.mm-p{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}.mm-p img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+
+.pr{padding:120px 24px;background:var(--n1)}.pr-i{max-width:1100px;margin:0 auto}.pr-h{text-align:center;margin-bottom:72px}
+.prg{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.ps{text-align:center}.ps-i{border-radius:20px;overflow:hidden;aspect-ratio:3/4;margin-bottom:16px}.ps-i img{width:100%;height:100%;object-fit:cover}
+.ps h4{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:var(--n11);margin-bottom:6px;letter-spacing:-.2px}
+.ps p{font-size:13px;color:var(--n7);line-height:1.5;padding:0 8px}
+.ps-n{font-family:'DM Sans',sans-serif;font-size:28px;font-weight:800;color:var(--n4);margin-bottom:12px}
+
+.ec{padding:120px 24px;background:var(--n12)}.ec-h{text-align:center;margin-bottom:64px}
+.eg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1060px;margin:0 auto}
+.ecc{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:4/3}
+.ecc img{width:100%;height:100%;object-fit:cover}.ecc::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(28,24,20,.85) 100%)}
+.ec-t{position:absolute;bottom:0;left:0;right:0;padding:24px;z-index:2}
+.ec-t h4{font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:4px}
+.ec-t p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.5}
+
+.ct{padding:0;background:var(--n2)}.ct-g{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+.ct-i{overflow:hidden}.ct-i img{width:100%;height:100%;object-fit:cover}
+.ct-c{display:flex;flex-direction:column;justify-content:center;padding:80px 64px}
+.ct-c .bt{font-size:16px;color:var(--n7);line-height:1.6;margin-bottom:32px;max-width:400px}
+.ct-b{display:flex;gap:12px;flex-wrap:wrap}
+
+footer{padding:48px 24px 32px;background:var(--n12);border-top:1px solid rgba(255,255,255,.05);text-align:center}
+.fl{font-size:13px;font-weight:700;letter-spacing:3px;color:var(--n6);margin-bottom:20px}
+.fk{display:flex;justify-content:center;gap:24px;list-style:none;margin-bottom:28px;flex-wrap:wrap}
+.fk a{font-size:12px;color:var(--n7);text-decoration:none;transition:color .3s}.fk a:hover{color:var(--n3)}
+.fc{font-size:11px;color:var(--n8)}
+
+@keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(32px);transition:all .8s cubic-bezier(.25,1,.5,1)}.rv.vis{opacity:1;transform:translateY(0)}
+.rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}.rv4{transition-delay:.32s}
+
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px}
+
+@media(max-width:1024px){.pg,.qg,.eg{grid-template-columns:repeat(2,1fr)}.ug{grid-template-columns:1fr}.qn{grid-template-columns:repeat(2,1fr)}.ig{grid-template-columns:repeat(3,1fr)}.prg{grid-template-columns:repeat(3,1fr)}.tex-w,.ct-g{grid-template-columns:1fr}.tex-i,.ct-i{max-height:400px}.mm-p{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:768px){nav{padding:0 20px}.nk{display:none}.pg{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}.qg,.eg{grid-template-columns:1fr}.ig{grid-template-columns:repeat(2,1fr)}.prg{grid-template-columns:1fr;max-width:320px;margin-left:auto;margin-right:auto}.hbtn,.ct-b{flex-direction:column;align-items:center}.tex-c,.ct-c{padding:48px 24px}.lb-t{padding:0 24px 40px}.mm-p{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><a href="#" class="nl">MMMMMMMMASLO</a><ul class="nk"><li><a href="#flavors">Смаки</a></li><li><a href="#quality">Якість</a></li><li><a href="#process">Процес</a></li><li><a href="#eco">Eco</a></li><li><a href="#order" class="nc">Замовити</a></li></ul></nav>
+
+<section class="hero"><div class="hero-bg"><img src="hero-pack-floating.png" alt="MMMMMMMMASLO"></div><div class="ht"><p class="ho">Крафтове фермерське масло</p><h1>Привіт, <span class="a">масло.</span></h1></div><div class="hb"><p class="hs">Ми створили масло, після якого ви більше ніколи не повернетесь до звичайного.</p><div class="hbtn"><a href="#order" class="bw">Замовити</a><a href="#highlights" class="bg">Дізнатись більше</a></div></div></section>
+
+<section class="hl" id="highlights"><p class="label label-l" style="text-align:center">Швидке знайомство</p><h2 class="st" style="text-align:center;color:var(--n1);margin-bottom:48px">Чому саме <span class="a">MMMMMMMMASLO?</span></h2><div class="hl-t">
+<div class="hl-c"><img src="highlights-6-packs.png" alt="6 смаків"><div class="hl-ct"><h4>6 неперевершених смаків</h4><p>Від чорного трюфелю до fleur de sel. Кожен — витвір мистецтва.</p></div></div>
+<div class="hl-c"><img src="highlights-farm.png" alt="Ферма"><div class="hl-ct"><h4>Фермерське молоко</h4><p>Від перевірених господарств із вільним випасом. Щоденно, на світанку.</p></div></div>
+<div class="hl-c"><img src="highlights-ingredients-macro.png" alt="Інгредієнти"><div class="hl-ct"><h4>Нуль хімії</h4><p>Без консервантів. Без барвників. Тільки те, що створила природа.</p></div></div>
+<div class="hl-c"><img src="highlights-lab.png" alt="Лабораторія"><div class="hl-ct"><h4>12 точок контролю</h4><p>Кожна партія — повний лабораторний аналіз. ДСТУ, HACCP.</p></div></div>
+<div class="hl-c"><img src="highlights-eco-pack.png" alt="Eco"><div class="hl-ct"><h4>Eco-пакування</h4><p>Біорозкладна упаковка з переробленого картону.</p></div></div>
+<div class="hl-c"><img src="highlights-tasting.png" alt="Дегустація"><div class="hl-ct"><h4>ММММММММ</h4><p>Єдине слово, яке ми чуємо від кожного, хто пробує.</p></div></div>
+</div></section>
+
+<section class="des"><div class="des-h rv"><img src="design-hands-packs.png" alt="Руки з пачками"></div><div class="des-i"><h2 class="st rv rv1">Закохайся <span class="m">з першого шматочка.</span></h2><p style="font-size:16px;color:var(--n7);line-height:1.65" class="rv rv2">Шість унікальних смаків. Шість пачок з характером. Масло, яке перетворює будь-який прийом їжі на подію.</p></div></section>
+
+<section class="pg-s" id="flavors"><p class="label rv" style="text-align:center">Колекція смаків</p><h2 class="st rv rv1" style="text-align:center">Шість смаків. <span class="m">Жоден — звичайний.</span></h2><div class="pg">
+<div class="pc rv"><div class="pi"><img src="design-pack-truffle.png" alt="Трюфель"></div><div class="po"></div><div class="pf"><div class="pt">Signature</div><div class="pn">Чорний трюфель</div><div class="pdsc">Аромат, який перетворює звичайний тост на подію.</div></div></div>
+<div class="pc rv rv1"><div class="pi"><img src="design-pack-herbs.png" alt="Трави"></div><div class="po"></div><div class="pf"><div class="pt">Bestseller</div><div class="pn">Прованські трави</div><div class="pdsc">Лаванда, тим'ян, розмарин. Поле Провансу на кінчику ножа.</div></div></div>
+<div class="pc rv rv2"><div class="pi"><img src="design-pack-honey.png" alt="Мед"></div><div class="po"></div><div class="pf"><div class="pt">Улюбленець</div><div class="pn">Мед і горіх</div><div class="pdsc">Карпатський мед та підсмажений волоський горіх.</div></div></div>
+<div class="pc rv rv1"><div class="pi"><img src="design-pack-olive.png" alt="Олива"></div><div class="po"></div><div class="pf"><div class="pt">Новинка</div><div class="pn">Олива та часник</div><div class="pdsc">Запечений часник і олія першого віджиму.</div></div></div>
+<div class="pc rv rv2"><div class="pi"><img src="design-pack-paprika.png" alt="Паприка"></div><div class="po"></div><div class="pf"><div class="pt">Bold</div><div class="pn">Копчена паприка</div><div class="pdsc">Іспанська пімент'я з димним характером.</div></div></div>
+<div class="pc rv rv3"><div class="pi"><img src="design-pack-salt.png" alt="Сіль"></div><div class="po"></div><div class="pf"><div class="pt">Класика</div><div class="pn">Fleur de sel</div><div class="pdsc">Морська сіль із Бретані. Досконалість — це простота.</div></div></div>
+</div></section>
+
+<section class="tex"><div class="tex-w"><div class="tex-i rv"><img src="design-unwrap.png" alt="Текстура масла"></div><div class="tex-c"><p class="label label-g rv">Текстура</p><h2 class="st rv rv1" style="color:var(--n1)">Ніжність, <span class="m">яку відчуваєш.</span></h2><p style="font-size:16px;color:var(--n5);line-height:1.65;margin-top:16px;max-width:420px" class="rv rv2">Кремова, шовковиста текстура, що тане на язику. Ідеальна консистенція — не занадто тверда, не занадто м'яка. Рівно те, що треба.</p></div></div></section>
+
+<section class="uc"><div class="uc-h"><p class="label rv">Для кожного моменту</p><h2 class="st rv rv1">Свій смак. <span class="m">Своя історія.</span></h2></div><div class="ug">
+<div class="ucc rv"><img src="usecase-morning-toast.png" alt="Ранок"><div class="uct"><h3>Ранковий ритуал</h3><p>Fleur de sel на хрусткому тості. Ідеальний старт дня.</p></div></div>
+<div class="ucc rv rv1"><img src="usecase-dinner-party.png" alt="Вечеря"><div class="uct"><h3>Вечеря з друзями</h3><p>Трюфельне масло на стейку. Звичайна вечеря стає незабутньою.</p></div></div>
+<div class="ucc rv rv1"><img src="usecase-kids-breakfast.png" alt="Діти"><div class="uct"><h3>Дитячий сніданок</h3><p>Мед і горіх на млинцях. Діти просять ще.</p></div></div>
+<div class="ucc rv rv2"><img src="usecase-culinary.png" alt="Кулінарія"><div class="uct"><h3>Кулінарна подорож</h3><p>Прованські трави на свіжому багеті. Париж ближче, ніж здається.</p></div></div>
+</div></section>
+
+<section class="lb"><img src="usecase-lifestyle.png" alt="Lifestyle"><div class="lb-t"><p class="label label-g rv">Стиль життя</p><h2 class="st rv rv1" style="color:#fff">Маленькі моменти <span style="color:rgba(255,255,255,.4)">великого задоволення.</span></h2><p style="font-size:16px;color:rgba(255,255,255,.6);line-height:1.65;margin-top:14px" class="rv rv2">Масло, яке перетворює буденний сніданок на улюблену частину дня.</p></div></section>
+
+<section class="qu" id="quality"><div class="qu-h"><p class="label label-l rv">Якість</p><h2 class="st rv rv1" style="color:var(--n1)">Ми одержимі якістю. <span class="m">Щоб вам не довелось.</span></h2></div><div class="qn">
+<div class="rv"><div class="qnv">100%</div><div class="qnl">Натуральний<br>склад</div></div>
+<div class="rv rv1"><div class="qnv">12</div><div class="qnl">Точок контролю<br>якості</div></div>
+<div class="rv rv2"><div class="qnv">0</div><div class="qnl">Штучних<br>добавок</div></div>
+<div class="rv rv3"><div class="qnv">5:00</div><div class="qnl">Збір молока<br>о 5 ранку</div></div>
+</div><div class="qg">
+<div class="qc rv"><img src="quality-production-wide.png" alt="Виробництво"><div class="qc-t"><h4>Власне виробництво</h4><p>Повний цикл від молока до готового масла.</p></div></div>
+<div class="qc rv rv1"><img src="quality-lab-closeup.png" alt="Лабораторія"><div class="qc-t"><h4>Лабораторний контроль</h4><p>ДСТУ, HACCP — усі норми бездоганно.</p></div></div>
+<div class="qc rv rv2"><img src="quality-milk-pour.png" alt="Молоко"><div class="qc-t"><h4>Фермерське молоко</h4><p>Від корів вільного випасу.</p></div></div>
+<div class="qc rv"><img src="quality-temperature.png" alt="Температура"><div class="qc-t"><h4>Холодний ланцюг</h4><p>Безперервний температурний контроль.</p></div></div>
+<div class="qc rv rv1"><img src="quality-lab-closeup-2.png" alt="Аналіз"><div class="qc-t"><h4>12 показників якості</h4><p>Суворий відбір кожної партії.</p></div></div>
+<div class="qc rv rv2"><img src="quality-temperature-2.png" alt="Зберігання"><div class="qc-t"><h4>Свіжість гарантована</h4><p>Від виробництва до вашого порогу.</p></div></div>
+</div></section>
+
+<section class="ing"><div class="ing-h"><p class="label rv">Інгредієнти</p><h2 class="st rv rv1">Від природи до столу. <span class="m">Без зупинок.</span></h2></div><div class="ig">
+<div class="ic rv"><img src="trufle.png" alt="Трюфель"><h4>Чорний трюфель</h4><p>П'ємонт, Італія</p></div>
+<div class="ic rv rv1"><img src="provan-herbs.png" alt="Трави"><h4>Прованські трави</h4><p>Лаванда, тим'ян, розмарин</p></div>
+<div class="ic rv rv2"><img src="honey-nuts.png" alt="Мед"><h4>Мед і горіхи</h4><p>Карпатський мед</p></div>
+<div class="ic rv rv1"><img src="garlic-olive.png" alt="Олива"><h4>Олива та часник</h4><p>Першого віджиму</p></div>
+<div class="ic rv rv2"><img src="paprica.png" alt="Паприка"><h4>Копчена паприка</h4><p>Іспанська пімент'я</p></div>
+<div class="ic rv rv3"><img src="salt.png" alt="Сіль"><h4>Fleur de sel</h4><p>Бретань, Франція</p></div>
+</div></section>
+
+<section class="mm"><div class="mm-h"><img src="mmm-reaction-group.png" alt="ММММММММ"><div class="mm-ht"><h2>ММММММММ</h2><p>Перша реакція — завжди однакова. І друга. І завжди.</p></div></div><div class="mm-p"><img src="mmm-tasting-1.png" alt="Дегустація 1"><img src="mmm-tasting-2.png" alt="Дегустація 2"><img src="mmm-tasting-3.png" alt="Дегустація 3"></div></section>
+
+<section class="pr" id="process"><div class="pr-i"><div class="pr-h"><p class="label rv">Від ферми до столу</p><h2 class="st rv rv1">Простий процес. <span class="m">Неймовірний результат.</span></h2></div><div class="prg">
+<div class="ps rv"><div class="ps-n">01</div><div class="ps-i"><img src="process-farm-dawn.png" alt="Ферма"></div><h4>Збір молока</h4><p>О 5 ранку з чистих пасовищ.</p></div>
+<div class="ps rv rv1"><div class="ps-n">02</div><div class="ps-i"><img src="process-milking.png" alt="Доїння"></div><h4>Відбір сировини</h4><p>Суворий відбір найкращого.</p></div>
+<div class="ps rv rv2"><div class="ps-n">03</div><div class="ps-i"><img src="process-lab-test.png" alt="Лабораторія"></div><h4>Контроль якості</h4><p>12 показників аналізу.</p></div>
+<div class="ps rv rv3"><div class="ps-n">04</div><div class="ps-i"><img src="process-churning.png" alt="Збивання"></div><h4>Збивання</h4><p>Традиційне, для ніжної текстури.</p></div>
+<div class="ps rv rv4"><div class="ps-n">05</div><div class="ps-i"><img src="process-packing.png" alt="Пакування"></div><h4>Пакування</h4><p>Eco-упаковка. Холодний ланцюг.</p></div>
+</div></div></section>
+
+<section class="ec" id="eco"><div class="ec-h"><p class="label label-l rv">Eco</p><h2 class="st rv rv1" style="color:var(--n1)">Смак без сліду <span class="m">на планеті.</span></h2></div><div class="eg">
+<div class="ecc rv"><img src="eco-packaging-closeup.png" alt="Упаковка"><div class="ec-t"><h4>Біорозкладна упаковка</h4><p>З переробленого картону. Жодного пластику.</p></div></div>
+<div class="ecc rv rv1"><img src="eco-farm-landscape.png" alt="Ферма"><div class="ec-t"><h4>Підтримка фермерів</h4><p>Справедлива ціна. Стабільне партнерство.</p></div></div>
+<div class="ecc rv rv2"><img src="eco-recycle-icon.png" alt="Переробка"><div class="ec-t"><h4>Сталий розвиток</h4><p>Мінімальний вуглецевий слід.</p></div></div>
+</div></section>
+
+<section class="ct" id="order"><div class="ct-g"><div class="ct-i"><img src="cta-box-set.png" alt="Подарунковий набір"></div><div class="ct-c"><p class="label rv">One more thing</p><h2 class="st rv rv1">Ваш перший <span class="a">набір.</span></h2><p class="bt rv rv2">Шість смаків. Одна коробка. Нескінченне «ММММММММ». Ідеальний подарунок собі — або тим, кого любите.</p><div class="ct-b rv rv3"><a href="#" class="bd">Замовити набір</a><a href="#" class="bo">Обрати окремо</a></div></div></div></section>
+
+<footer><div class="fl">MMMMMMMMASLO</div><ul class="fk"><li><a href="#">Про нас</a></li><li><a href="#">Смаки</a></li><li><a href="#">Якість</a></li><li><a href="#">Де купити</a></li><li><a href="#">Для HoReCa</a></li><li><a href="#">Контакти</a></li><li><a href="#">Instagram</a></li></ul><p class="fc">© 2026 MMMMMMMMASLO. Крафтове фермерське масло. Усі права захищені.</p></footer>
+
+<script>
+const rvs=document.querySelectorAll('.rv');const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});rvs.forEach(el=>obs.observe(el));
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('sc',window.scrollY>60)});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});
+</script>
+</body>
+</html>
